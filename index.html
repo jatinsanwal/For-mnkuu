@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For Mnkuu ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#ff9ebb,#ffc4d6);
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+/* pages */
+
+.page{
+display:none;
+padding:40px 25px;
+min-height:100vh;
+animation:fade 1s;
+}
+
+.active{
+display:block;
+}
+
+@keyframes fade{
+from{opacity:0}
+to{opacity:1}
+}
+
+/* titles */
+
+h1{
+font-size:44px;
+margin-bottom:30px;
+}
+
+/* big text */
+
+.text{
+font-size:28px;
+line-height:1.8;
+max-width:900px;
+margin:auto;
+white-space:pre-line;
+}
+
+/* button */
+
+button{
+margin-top:40px;
+font-size:34px;
+padding:18px 55px;
+border:none;
+border-radius:60px;
+background:#ff2e7a;
+color:white;
+cursor:pointer;
+box-shadow:0 0 25px rgba(0,0,0,0.4);
+}
+
+button:hover{
+transform:scale(1.12);
+}
+
+/* routine table */
+
+table{
+margin:auto;
+margin-top:25px;
+font-size:26px;
+border-collapse:collapse;
+background:rgba(255,255,255,0.2);
+border-radius:10px;
+overflow:hidden;
+}
+
+td{
+padding:14px 22px;
+border:1px solid white;
+}
+
+/* music button */
+
+.music{
+position:fixed;
+right:15px;
+top:40%;
+font-size:30px;
+background:#ff2e7a;
+padding:15px;
+border-radius:50%;
+cursor:pointer;
+box-shadow:0 0 15px rgba(0,0,0,0.4);
+}
+
+/* love text */
+
+.love{
+font-size:75px;
+font-weight:bold;
+margin-top:40px;
+background:linear-gradient(90deg,#ff0000,#ff66cc,#ff0000);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.1)}
+100%{transform:scale(1)}
+}
+
+/* hearts */
+
+.heart{
+position:fixed;
+color:#ff1f75;
+animation:fall 8s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh)}
+100%{transform:translateY(110vh)}
+}
+
+/* petals */
+
+.petal{
+position:fixed;
+width:18px;
+height:18px;
+background:pink;
+border-radius:50% 50% 50% 0;
+transform:rotate(45deg);
+animation:petalfall 10s linear infinite;
+}
+
+@keyframes petalfall{
+0%{transform:translateY(-10vh) rotate(0)}
+100%{transform:translateY(110vh) rotate(360deg)}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="music" onclick="toggleMusic()">🎵</div>
+
+<audio id="song" loop>
+<source src="SONG_LINK_HERE.mp3">
+</audio>
+
+<!-- PAGE 1 -->
+
+<div class="page active">
+<h1>Dear Mnkuu ❤️</h1>
+<div class="text" id="p1"></div>
+<button onclick="nextPage()">❤️</button>
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="page">
+<h1>For You</h1>
+<div class="text" id="p2"></div>
+<button onclick="nextPage()">❤️</button>
+</div>
+
+<!-- PAGE 3 -->
+
+<div class="page">
+<h1>Your Health Routine</h1>
+
+<table>
+<tr><td>Morning</td><td>1 बार Bhaap + 1 बार Garara</td></tr>
+<tr><td>Afternoon</td><td>1 बार Garara</td></tr>
+<tr><td>Evening</td><td>1 बार Bhaap</td></tr>
+<tr><td>Night</td><td>1 बार Garara</td></tr>
+</table>
+
+<div class="text" id="p3"></div>
+
+<button onclick="nextPage()">❤️</button>
+</div>
+
+<!-- PAGE 4 -->
+
+<div class="page">
+<h1>Please Listen ❤️</h1>
+<div class="text" id="p4"></div>
+<button onclick="nextPage()">❤️</button>
+</div>
+
+<!-- PAGE 5 -->
+
+<div class="page">
+<h1>One Last Thing ❤️</h1>
+<div class="text" id="p5"></div>
+
+<div class="love">
+I LOVE YOU
+</div>
+
+</div>
+
+<script>
+
+let pages=document.querySelectorAll(".page")
+let current=0
+
+function nextPage(){
+pages[current].classList.remove("active")
+current++
+pages[current].classList.add("active")
+}
+
+/* typing */
+
+function type(text,id,speed=20){
+let i=0
+let el=document.getElementById(id)
+el.innerHTML=""
+
+function typing(){
+if(i<text.length){
+el.innerHTML+=text.charAt(i)
+i++
+setTimeout(typing,speed)
+}
+}
+typing()
+}
+
+/* messages */
+
+type(`यह छोटी-सी website मैंने सिर्फ आपके लिए बनाई है.
+
+कोई fancy project नहीं है
+कोई बड़ा काम भी नहीं है
+
+बस एक छोटी-सी कोशिश है
+उस इंसान के लिए
+जो मेरे लिए बहुत important है.
+
+मुझे पता है कि
+garara करना
+bhaap लेना
+ये सब routine follow करना थोड़ा boring लगता होगा.
+
+लेकिन जब आपको खाँसी आती है
+या गला दर्द करता है
+
+तो सच बताऊँ
+मुझे अच्छा नहीं लगता.
+
+कभी-कभी मैं इसलिए नाराज़ भी हो जाता हूँ
+क्योंकि आप अपना ध्यान नहीं रखतीं.
+
+लेकिन उस नाराज़गी के पीछे
+बस एक ही reason होता है
+
+कि मुझे आपकी health की चिंता होती है.
+
+इसलिए बस एक promise कर लीजिए
+
+कि अब से
+आप अपना ध्यान रखेंगी.
+
+नीचे वाला heart दबाइए ❤️`,"p1")
+
+type(`शायद आपको लगता होगा
+
+कि इतनी-सी खाँसी है
+ठीक हो जाएगी.
+
+लेकिन सच यह है
+कि छोटी-छोटी चीज़ें ignore करते-करते ही
+problem बड़ी हो जाती है.
+
+अगर आप यह routine follow करेंगी
+
+तो मुझे सच में बहुत अच्छा लगेगा.
+
+क्योंकि तब मुझे लगेगा
+कि आप अपनी health को seriously ले रही हैं.
+
+बस थोड़ा-सा effort चाहिए
+और सब ठीक हो जाएगा.`,"p2")
+
+type(`यह routine बहुत simple है.
+
+दिन में मुश्किल से
+10-15 मिनट लगेंगे.
+
+लेकिन इससे
+
+खाँसी जल्दी ठीक होगी
+गला आराम में रहेगा
+नाक भी साफ रहेगी.
+
+और सबसे important
+
+मुझे आपकी चिंता कम होगी.
+
+इसलिए please
+इस routine को follow करना शुरू कीजिए.`,"p3")
+
+type(`कभी-कभी care करना थोड़ा अजीब लगता है.
+
+क्योंकि सामने वाले को लगता है
+कि हम डाँट रहे हैं.
+
+लेकिन असल में
+हम care कर रहे होते हैं.
+
+जब मैं कहता हूँ
+
+garara कर लीजिए
+bhaap ले लीजिए
+
+तो वह सिर्फ words नहीं होते.
+
+वह actually यह होता है
+
+कि मुझे आपकी health की चिंता है.
+
+इसलिए please
+
+इस बार मेरी बात मान लीजिए.`,"p4")
+
+type(`अगर आप यह routine properly follow करेंगी
+
+तो एक छोटी-सी deal है.
+
+हर दिन जब आप
+
+bhaap लेंगी
+garara करेंगी
+और अपना ध्यान रखेंगी
+
+तो आपको एक cute reward मिलेगा 😚
+
+तो अब choice आपकी है.
+
+Routine follow करना है
+या reward miss करना है.
+
+मुझे पूरा भरोसा है
+कि आप सही decision लेंगी.`,"p5")
+
+
+/* music */
+
+let song=document.getElementById("song")
+
+function toggleMusic(){
+if(song.paused){
+song.play()
+}else{
+song.pause()
+}
+}
+
+/* hearts */
+
+setInterval(()=>{
+let heart=document.createElement("div")
+heart.className="heart"
+heart.innerHTML="❤️"
+heart.style.left=Math.random()*100+"vw"
+heart.style.fontSize=Math.random()*30+20+"px"
+document.body.appendChild(heart)
+setTimeout(()=>heart.remove(),8000)
+},300)
+
+/* petals */
+
+setInterval(()=>{
+let petal=document.createElement("div")
+petal.className="petal"
+petal.style.left=Math.random()*100+"vw"
+document.body.appendChild(petal)
+setTimeout(()=>petal.remove(),10000)
+},500)
+
+</script>
+
+</body>
+</html>
